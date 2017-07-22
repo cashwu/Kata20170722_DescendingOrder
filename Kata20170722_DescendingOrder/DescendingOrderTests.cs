@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Kata20170722_DescendingOrder
@@ -10,6 +11,12 @@ namespace Kata20170722_DescendingOrder
         public void input_21445_should_descending_order_to_54421()
         {
             AssertOrderShouldBe(21445, 54421);
+        }
+
+        [TestMethod]
+        public void input_145263_should_descending_order_to_654321()
+        {
+            AssertOrderShouldBe(145623, 654321);
         }
 
         private static void AssertOrderShouldBe(int source, int expected)
@@ -24,7 +31,7 @@ namespace Kata20170722_DescendingOrder
     {
         public int DescedningOrder(int num)
         {
-            return 54421;
+            return int.Parse(string.Concat(num.ToString().ToCharArray().OrderByDescending(a => a)));
         }
     }
 }
